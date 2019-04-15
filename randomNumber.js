@@ -8,7 +8,7 @@ function randomNumber(n) {
   if(n > 1000000)
     throw Error;
 
-  while (flip()) {
+  do {
     let currentDate = new Date();
     const lastDigit = currentDate.getMilliseconds() % 10;
     const result1 = randomNumber + lastDigit;
@@ -27,7 +27,7 @@ function randomNumber(n) {
     if (result3 < n && result3 > 0) {
       randomNumber = result3;
     }
-  }
+  } while(flip());
   return randomNumber;
 }
 
